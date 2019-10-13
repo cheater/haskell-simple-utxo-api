@@ -1,0 +1,34 @@
+name:                haskell-simple-utxo-api
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/cheater/haskell-simple-utxo-api#readme
+license:             BSD3
+license-file:        LICENSE
+author:              cheater
+maintainer:          none@none.com
+copyright:           All Rights Reserved
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+Library
+  hs-source-dirs:      lib
+  default-language:    Haskell2010
+  exposed-modules:     Data.Mempool,
+                       Data.Tx
+  build-depends:       base >= 4.7 && < 5,
+                       positive >= 0.4.1 && < 0.5,
+                       non-negative >= 0.1.2 && < 0.1.3,
+                       containers >= 0.6 && < 0.7
+
+Test-Suite test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             test.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5,
+                       haskell-simple-utxo-api,
+                       hedgehog >= 1.0.1 && < 1.1,
+                       containers >= 0.6 && < 0.7
